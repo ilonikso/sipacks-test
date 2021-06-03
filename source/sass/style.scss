@@ -1,0 +1,30 @@
+@import "node_modules/normalize.scss/normalize.scss";
+
+@import "fonts.scss";
+@import "variables.scss";
+@import "mixin.scss";
+@import "scaffolding.scss";
+@import "common.scss";
+@import "customComponents.scss";
+
+
+@import "blocks/preloader";
+
+@import "blocks/modal.scss";
+@import "blocks/button.scss";
+@import "blocks/loader.scss";
+@import "blocks/promo1.scss";
+
+@import "blocks/table.scss";
+@import "blocks/tags.scss";
+@import "blocks/form.scss";
+@import "blocks/categories.scss";
+@import "blocks/sheet.scss";
+@import "blocks/item.scss";
+@import "blocks/cards.scss";
+@import "blocks/contact.scss";
+@import "blocks/notification.scss";
+
+// Template partials
+@import "blocks/nav.scss";
+@import "blocks/footer.scss";

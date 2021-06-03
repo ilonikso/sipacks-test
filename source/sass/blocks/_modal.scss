@@ -1,0 +1,161 @@
+.overlay {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 4;
+    transition: 0.3s all;
+
+    &--menu {
+        top: 71px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    padding: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    box-shadow: 0px 10px 15px rgba(#000, 0.3);
+    visibility: hidden;
+    z-index: 31;
+    width: calc(100% - 40px);
+    max-width: 500px;
+
+    &__cross{
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        background: none;
+        border: none;
+        transition: $anim;
+        outline: none;
+
+        &::before,
+        &::after{
+            display: block;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 18px;
+            background-color: $tx-primary;
+            transform: translate(-52%, -50%) rotate(45deg);
+        }
+
+        &::after{
+            transform: translate(-48%, -49%) rotate(-45deg);
+        }
+
+        &:hover{
+            opacity: 0.8;
+        }
+
+        &:active{
+            opacity: 0.6;
+            transform: scale(0.95);
+        }
+    }
+}
+
+.modal.active {
+    animation: modalOpen .4s ease;
+    opacity: 1;
+    visibility: visible;
+
+    @keyframes modalOpen {
+        from {
+            transform: translate(-50%, -54%);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        to {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.to-top-button{
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 4%;
+    bottom: 14%;
+    opacity: 0.5;
+    visibility: hidden;
+    background-color: $br-orange;
+    border-radius: 8px;
+    transition: $anim;
+    box-shadow: 1px 2px 5px rgba(#000, .2);
+
+    &::before,
+    &::after{
+        display: block;
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 15px;
+        border-radius: 2px;
+        background-color: #fff;
+        top: 50%;
+        left: calc(50% - 4px);
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after{
+        left: calc(50% + 4px);
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:hover{
+        opacity: 1;
+    }
+
+    &-active{
+        visibility: visible;
+        animation: .3s ease-out showToTopButton;
+    }
+
+    @keyframes showToTopButton{
+        from{
+            opacity: 0;
+        }
+    
+        to{
+            opacity: 0.4;
+        }
+    }
+}
+
+@media(max-width: 768px){
+    .to-top-button{
+        display: none;
+    }
+}

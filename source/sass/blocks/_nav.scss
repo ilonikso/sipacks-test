@@ -1,0 +1,293 @@
+.nav {
+    background: linear-gradient(171.29deg, #FAC405 -29.19%, rgba(244, 36, 8, 0.96) 117.5%);
+
+    &__wrapper {
+        //max-width: 1265px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        align-self: center;
+        margin-top: 2px;
+    }
+
+    &__menu {
+        display: flex;
+        list-style: none;
+        font-family: "pr-r";
+        padding: 0;
+        margin: 0;
+        margin-right: -15px;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+            padding-top: 36px;
+            padding: 36px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 16px;
+            line-height: 17px;
+            transition: $anim;
+            margin-left: 30px;
+            color: $br-white;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &:active {
+                opacity: 0.6;
+                transform: scale(0.95);
+            }
+        }
+
+        &--products-page {
+            a {
+                color: $br-white;
+            }
+        }
+    }
+
+    &__item {
+        &--active {
+            font-family: "pr-sb";
+        }
+    }
+
+    &__burger {
+        font-size: 0;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        display: none;
+        z-index: 20;
+        transition: $anim;
+
+        &::before,
+        &::after {
+            display: block;
+            content: "";
+            width: 30px;
+            height: 2px;
+            background-color: $tx-primary;
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 8px 0 0 $tx-primary, 0 16px 0 0 $tx-primary;
+            transition: $anim;
+        }
+    }
+
+    &__burger--close {
+        font-size: 0;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        transition: $anim;
+
+        &::before,
+        &::after {
+            display: block;
+            content: "";
+            width: 25px;
+            height: 2px;
+            background-color: $tx-primary;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            box-shadow: none;
+            transition: $anim;
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}
+
+@media(max-width: 2100px){
+    .nav{
+        background: none;
+
+        &__menu{
+            a{
+                color: $br-white;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav {
+        &__wrapper {
+            padding-left: 0;
+            // padding-right: 0;
+            border-bottom-right-radius: 0px;
+        }
+
+        &__item {
+            a {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        &__buy {
+            margin-left: 0;
+        }
+
+        &__logo {
+            padding-left: 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        &__wrapper {
+            position: relative;
+
+            &--open {
+                background-color: white;
+            }
+        }
+
+        &__menu {
+            display: none;
+        }
+
+        &__burger {
+            display: block;
+            // margin-right: 29px;
+        }
+
+        &__logo {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        &__menu--open {
+            display: block;
+            width: 100%;
+            position: absolute;
+            top: 69px;
+            left: 0;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            background-color: $br-white;
+            z-index: 10;
+            box-shadow: 0px 15px 12px rgba($tx-black, 0.3);
+            animation: 0.3s menuOpen ease;
+
+            .nav__item {
+                a {
+                    display: block;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    margin: 0;
+                }
+            }
+
+            .nav__buy {
+                max-width: 150px;
+                margin: 0 auto;
+                margin-top: 40px;
+                text-align: center;
+
+                a {
+                    padding-top: 16px;
+                    border-top-left-radius: 50px;
+                    border-bottom-left-radius: 50px;
+                }
+            }
+
+            @keyframes menuOpen {
+                from {
+                    transform: translateY(-200px);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .nav__burger::after{
+            box-shadow: 0 8px 0 0 #fff, 0 16px 0 0 #fff;
+            background-color: #fff;
+        }
+        
+        .nav__burger::before{
+            background-color: #fff;
+        }
+
+        .nav__burger--close::before,
+        .nav__burger--close::after{
+            background-color: $tx-primary;
+            box-shadow: none;
+        }
+
+        .nav__item a{
+            color: $tx-primary;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .nav {
+        &--product-page{
+            .nav__logo{
+                filter: grayscale(1) invert(1) saturate(2) contrast(200%);
+            }
+
+            .nav__wrapper--open{
+                .nav__logo{
+                    filter: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .nav {
+        &__burger {
+            margin-right: 20px;
+            margin-right: 0;
+        }
+
+        &__menu--open {
+            .nav__item {
+                a {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 370px) {
+    .nav {
+        &__logo {
+            max-width: 230px;
+        }
+    }
+}
+
+
+//filter: grayscale(1) invert(1) saturate(2)

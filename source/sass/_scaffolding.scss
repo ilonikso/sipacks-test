@@ -1,0 +1,72 @@
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    font-size: 28px;
+    margin: 0 auto;
+    font-family: "pr-r";
+    font-size: 16px;
+    color: $tx-primary;
+    // max-width: 1440px;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2 {
+    font-size: 2.3125em;
+    line-height: 1.1351;
+    font-family: "g-bd";
+}
+
+h3 {
+    font-size: 1.75em;
+    font-family: "g-bd";
+    line-height: normal;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.4375;
+}
+
+.wrapper {
+    max-width: 1200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+// Доступное скрытие элементов
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}

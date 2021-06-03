@@ -1,0 +1,75 @@
+.button {
+    text-decoration: none;
+    color: inherit;
+
+    font-family: "g-bd";
+    display: inline-block;
+    border-radius: 50px;
+    // border-radius: 8px;
+    padding-top: 10px;
+    padding-bottom: 11px;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    transition: $anim;
+    background-color: $br-orange;
+    color: $br-white;
+    position: relative;
+    margin-top: 3px;
+    letter-spacing: 0.05em;
+    margin-right: 20px;
+    box-shadow: 2px 2px 10px rgba(#000, .08);
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.6;
+        transform: scale(0.98);
+    }
+
+    &[type="button"]{
+        border: none;
+        outline: none;
+    }
+
+    &--white {
+        background-color: $br-white;
+        color: $tx-primary;
+        padding-top: 8px;
+        padding-bottom: 9px;
+        padding-left: 28px;
+        padding-right: 28px;
+        border: 2px solid $tx-primary;
+
+        &::before {
+            display: none;
+        }
+
+        &:hover{
+            background-color: $br-orange;
+            color: $br-white;
+            border-color: $br-orange;
+        }
+
+        &:active{
+            opacity: 0.6;
+        }
+    }
+
+    &--dark{
+        background-color: $tx-primary;
+        color: $br-white;
+
+        &::before {
+            display: none;
+        }
+
+        &:hover{
+            background-color: $br-orange;
+            color: $br-white;
+            border-color: $br-orange;
+        }
+    }
+}

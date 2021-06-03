@@ -1,0 +1,43 @@
+// Brands common settings
+
+.br-pre-header{
+    text-transform: uppercase;
+    color: #9d9d9d;
+    font-family: 'g-bd';
+    font-size: 0.875em;
+    line-height: 1.05;
+}
+
+.br-header{
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 28px;
+}
+
+.br-text{
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+}
+
+.br-promo{
+    overflow: hidden;
+}
+
+[data-aos="appear"] {
+    opacity: 0;
+    transition-property: transform, opacity;
+  
+    &.aos-animate {
+      opacity: 1;
+    }
+}
+
+[data-aos="wave"] {
+    transform: scaleY(1.2);
+    transition-property: transform, opacity;
+  
+    &.aos-animate {
+        transform: scaleY(1);
+    }
+}

@@ -1,0 +1,128 @@
+.contact {
+    background-color: $tx-primary;
+    color: $br-white;
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url("../img/vector/contact-decoration.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    animation: moveContactBg 8s 2s ease alternate infinite;
+
+    @keyframes moveContactBg {
+        from{
+            background-position: center 100%;
+        }
+
+        to{
+            background-position: center 0%;
+        }
+    }
+
+    &__wrapper {
+        align-content: center;
+    }
+
+    &__header {
+        box-sizing: border-box;
+        font-size: 26px;
+        letter-spacing: 0.05em;
+        margin-bottom: 34px;
+        text-align: center;
+    }
+
+    &__button {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        max-width: 200px;
+        border: none;
+        outline: none;
+    }
+
+    &-form{
+        max-width: 600px;
+        width: 100%;
+        padding: 25px;
+        padding-bottom: 0;
+        padding-top: 10px;
+        box-sizing: border-box;
+
+        &__text{
+            font-size: 1.2em;
+        }
+
+        &__logo{
+            margin-bottom: 20px;
+        }
+
+        &__form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &__label{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            span{
+                // padding-left: 15px;
+                padding-bottom: 10px;
+            }
+        }
+
+        &__input{
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba($tx-primary, .4);
+            outline: none;
+        }
+
+        &__textarea{
+            resize: none;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgba($tx-primary, .4);
+            min-height: 120px;
+        }
+
+        &__submit{
+            border: none;
+            max-width: 210px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media(max-width: 768px){
+    .contact{
+        padding-top: 20px;
+        padding-bottom: 30px;
+
+        &__header{
+            max-width: 400px;
+            width: 100%;
+            display: block;
+            line-height: 1.5em;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media(max-width: 425px){
+    .contact{
+        &__header{
+            font-size: 20px;
+        }
+
+        &-form{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}

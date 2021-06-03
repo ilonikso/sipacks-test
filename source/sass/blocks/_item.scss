@@ -1,0 +1,237 @@
+.item {
+    &__header {
+        font-family: "pr-sb";
+        display: flex;
+        letter-spacing: 0.05em;
+        text-align: center;
+        justify-content: center;
+    }
+
+    &__sort {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        font-size: 0;
+        border: none;
+        background: none;
+        position: relative;
+        transition: $anim;
+        margin-left: 2px;
+        margin-top: 1px;
+        outline: none;
+
+        &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            background-image: url("../img/vector/arrow-down.svg");
+            background-position: center;
+            //background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:active {
+            opacity: 0.6;
+            transform: scale(0.9);
+        }
+
+        &--down {
+            transform: rotate(180deg);
+
+            &:active {
+                opacity: 0.6;
+                transform: scale(0.9) rotate(180deg);
+            }
+        }
+
+        &--up {
+            display: none;
+        }
+    }
+
+    &-filter {
+        display: grid;
+        grid-template-columns: 0.85fr repeat(3, 0.5fr) 0.5fr 50px repeat(2, 0.5fr) 50px;
+
+        &:hover{
+            background-color: rgba(#ecf0f1, .4);
+        }
+    }
+
+    &__data {
+        letter-spacing: 0.05em;
+    }
+
+    &__size {
+        margin-right: 20px;
+    }
+
+    &__questions{
+        
+    }
+}
+
+@media(max-width: 1200px){
+    .item{
+        &-filter{
+            grid-template-columns: 0.85fr repeat(3, 0.5fr) 0.5fr 54px repeat(2, 0.5fr) 50px;
+        }
+
+        &__download{
+            width: 125px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        &__questions{
+            width: 125px;
+        }
+
+        &__like{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        &__size{
+            margin-right: 0;
+        }
+    }
+}
+
+@media(max-width: 1024px){
+    .item{
+        &-filter{
+            grid-template-columns: 0.85fr repeat(3, 0.5fr) 0.5fr 50px repeat(2, 0.3fr) 50px;
+            grid-template-columns: 0.85fr repeat(2, 0.4fr) 0.4fr 54px repeat(2, 0.4fr) 50px;
+        }
+
+        &__questions{
+            width: 110px;
+        }
+
+        &__download{
+            width: 110px;
+        }
+
+        &__size{
+            display: none;
+        }
+    }
+}
+
+
+@media(max-width: 992px){
+    .item{
+        &-filter{
+            grid-template-columns: 1fr repeat(3, 115px) 54px repeat(2, 0.41fr);
+        }
+    }
+}
+
+@media(max-width: 850px){
+    .item{
+        &-filter{
+            grid-template-columns: 1fr repeat(2, 115px) 54px repeat(2, 0.4fr);
+        }
+
+        &__diff{
+            display: none;
+        }
+    }
+}
+
+@media(max-width: 767px){
+    .item{
+        &-filter{
+            grid-template-columns: 1fr repeat(2, 100px) 60px 0.4fr;
+            grid-template-columns: 1.4fr 100px 100px 60px 0.4fr;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        &__download{
+            display: none;
+        }
+
+        &__header{
+            font-size: 14px;
+        }
+
+        &__author{
+            font-size: 14px;
+        }
+
+        &__like{
+            margin: 0 auto;
+        }
+
+        &__sort{
+            &::before{
+                width: 18px;
+                height: 18px;
+                background-size: cover;
+                top: 55%;
+            }
+        }
+    }
+}
+
+@media(max-width: 525px){
+    .item{
+        &-filter{
+            
+            grid-template-columns: 1.4fr 100px 60px 0.4fr;
+            
+        }
+
+        &__date{
+            display: none;
+        }
+    }
+}
+
+@media(max-width: 425px){
+    .item{
+        &__like{
+            // display: none;
+        }
+
+        &-filter{
+            grid-template-columns: 1.4fr 100px 40px 40px;            
+        }
+
+        &__questions{
+            width: auto;
+
+            .dropdown-toggle{
+                font-size: 0;
+                width: 30px;
+                height: 30px;
+
+                &::after{
+                    left: 11px;
+                    top: 55%;
+                }
+            }
+
+            .active{
+                &::after{
+                    left: 10px;
+                    top: 52%;
+                }
+            }
+        }
+    }
+}

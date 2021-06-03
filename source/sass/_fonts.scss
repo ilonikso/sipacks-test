@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "g-bk";
+    src: url('../fonts/Gotham-Book.woff2') format('woff2'), 
+        url('../fonts/Gotham-Book.woff') format('woff'),
+        url("../fonts/Gotham-Book.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "g-bd";
+    src: url('../fonts/Gotham-Pro-Bold.woff2') format('woff2'), 
+        url('../fonts/Gotham-Pro-Bold.woff') format('woff'),
+        url("../fonts/Gotham-Pro-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "g-l";
+    src: url('../fonts/Gotham-Light.woff2') format('woff2'), 
+        url('../fonts/Gotham-Light.woff') format('woff'),
+        url("../fonts/Gotham-Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "pr-r";
+    src: url('../fonts/ProximaNova-Regular.woff2') format('woff2'), 
+        url('../fonts/ProximaNova-Regular.woff') format('woff'),
+        url("../fonts/ProximaNova-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "pr-sb";
+    src:url('../fonts/ProximaNova-Semibold.woff2') format('woff2'), 
+        url('../fonts/ProximaNova-Semibold.woff') format('woff'), 
+        url("../fonts/ProximaNova-Semibold.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "pr-b";
+    src: url('../fonts/ProximaNova-Bold.woff2') format('woff2'), 
+        url('../fonts/ProximaNova-Bold.woff') format('woff'),
+        url("../fonts/ProximaNova-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

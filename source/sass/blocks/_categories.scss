@@ -1,0 +1,55 @@
+.categories {
+    margin-top: 38px;
+    margin-bottom: 12px;
+
+    &__wrapper {
+        margin-left: 20px;
+    }
+
+    &__button {
+        display: inline-block;
+        border: none;
+        background: none;
+        outline: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        padding-bottom: 3px;
+        margin-right: 10px;
+        margin-bottom: 8px;
+        transition: $anim;
+
+        &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: $tx-primary;
+            background-color: lighten($color: $tx-primary, $amount: 50%);
+            border-radius: 2px;
+            bottom: 0;
+            left: 0;
+        }
+
+        &:hover {
+            opacity: 0.8;
+
+            &::before {
+                background-color: $br-orange;
+            }
+        }
+
+        &:active {
+            opacity: 0.6;
+            transform: scale(0.96);
+        }
+
+        &--active {
+            font-family: "pr-sb";
+            &::before {
+                background-color: $br-orange;
+            }
+        }
+    }
+}
